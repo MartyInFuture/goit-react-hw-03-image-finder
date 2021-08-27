@@ -11,7 +11,7 @@ class Modal extends Component {
   }
   escapePress = (e) => {
     if (e.key === 'Escape') {
-      this.props.isModalOpen();
+      this.props.isModalOpen(e);
     }
   };
   render() {

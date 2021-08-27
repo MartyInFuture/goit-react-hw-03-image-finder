@@ -9,8 +9,8 @@ class ImagesGalleryItem extends Component {
   };
 
   isModalOpen = (e) => {
-    if (e.target !== e.currentTarget) return false;
-    this.setState((prev) => ({ modalIsOpen: !prev.modalIsOpen }));
+    if (e.target === e.currentTarget || e.key === 'Escape')
+      this.setState((prev) => ({ modalIsOpen: !prev.modalIsOpen }));
   };
 
   render() {
