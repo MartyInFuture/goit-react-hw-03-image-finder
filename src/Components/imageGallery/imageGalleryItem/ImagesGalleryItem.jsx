@@ -8,7 +8,8 @@ class ImagesGalleryItem extends Component {
     modalIsOpen: false,
   };
 
-  isModalOpen = () => {
+  isModalOpen = (e) => {
+    if (e.target !== e.currentTarget) return false;
     this.setState((prev) => ({ modalIsOpen: !prev.modalIsOpen }));
   };
 
@@ -18,7 +19,7 @@ class ImagesGalleryItem extends Component {
         <ImagesGalleryItemStyled>
           <img
             src={this.props.item.webformatURL}
-            alt=""
+            alt={this.props.item.tags}
             className="ImageGalleryItem-image"
             onLoad={this.props.imageOnLoad}
             onClick={this.isModalOpen}
